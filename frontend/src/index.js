@@ -4,6 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import'./assets/medium-cover.jpg';
+
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
