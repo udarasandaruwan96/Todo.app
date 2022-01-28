@@ -14,6 +14,6 @@ export default function BaseLogin() {
          </div>
       </div>
 
-      ) ;
+      ) 
     }
     

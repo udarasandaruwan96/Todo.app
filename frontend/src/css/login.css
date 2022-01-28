@@ -75,7 +75,7 @@
 .bg-img{
     padding: 0;
     border-radius: 10px 0 0 10px;
-    background: rgba(0,0,0,0.04) url(http://localhost:3000//static/media/medium-cover.e70f9e99d8b13ba60045.jpg)top left no-repeat;
+    background: rgba(0,0,0,0.04) url(http://localhost:3000/static/media/medium-cover.e70f9e99d8b13ba60045.jpg)top left no-repeat;
     background-size: cover;
     top: 0;
     bottom: 0;
