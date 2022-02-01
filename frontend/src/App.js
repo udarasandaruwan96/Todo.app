@@ -11,7 +11,7 @@ import Register from './components/pages/Register';
 
 //import { BrowserRouter,Router,Route } from 'react-router-dom';
 
-import { BrowserRouter as Router, Route,  Routes, } from "react-router-dom";
+import { BrowserRouter as Router, Route,  Switch, } from "react-router-dom";
 
 
 function App() {
@@ -24,11 +24,11 @@ function App() {
       
 
         <Router>
-        < Routes>
+        < Switch>
           <Route exact path ="/" component = {Home} />
-          <Route  path ="/login" component = {Login} />
-          <Route  path ="/register" component = {Register} />
-        </ Routes>
+          <Route path ="/login" component = {Login} />
+          <Route path ="/register" component = {Register} />
+        </ Switch>
       </Router> 
 
          
