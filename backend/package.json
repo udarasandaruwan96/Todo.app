@@ -5,14 +5,19 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
-     "dev": "nodemon server.js"
+    "dev": "nodemon server.js"
   },
   "author": "Udara",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "bcrypt": "^5.0.1",
     "dotenv": "^15.0.0",
-    "express": "^4.17.2",
-    "mongoose": "^6.1.9"
+    "mongoose": "^6.1.10",
+    "nodemon": "^2.0.15",
+    "typescript": "^4.5.5"
   }
 }
