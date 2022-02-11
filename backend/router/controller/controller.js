@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt');
 //const User = require("./model/schema");
 const User = require("../../model/schema");
+const jwt = require("jsonwebtoken");
 
 
 //controller for register
@@ -78,10 +79,23 @@ exports.login =  async(req, res)=>{
     const isMatch = await bcrypt.compare(password, user.password);
     
     if(!isMatch)return res.status(406).json({err:"Invalid Credentials"})
+    
+    // creat jwt token
+    const token = jwt.sign ({id : user._id}, process.env.JWT_SECRET)
 
-    res.json({username: user.username , email: user.email})
+    res.json({token,username: user.username , email: user.email})
 
     }catch (error){
         res.status(500).json({err: error.message || "Error while Login"})
     }
     };
+
+    // delete user controller
+    exports.delete = async(req,res)=>{
+      try{
+        await User.findByIdAndDelete(req.user_id)
+        res.json({msg:"User Deleted Successfully..!"});
+      }catch(error){
+          res.status(500).json({err: error.message || "Error while deleting user"})
+      }
+    }

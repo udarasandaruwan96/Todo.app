@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 
 import BaseLogin from '../imports/BaseLogin';
 import LoginForm from '../imports/LoginForm';
@@ -7,13 +7,27 @@ import LoginForm from '../imports/LoginForm';
 // import LoginForm from './components/imports/LoginForm';
 
 export default function Login() {
-    return (
+
+  const[email, setEmail] = useState("");
+  const [password, setPassword]=useState("");
+
+  //handle Submit handler function
+  const handleSubmit = (event) =>{
+    event.preventDefault();
+
+    const userCredential ={
+      email,
+      password
+    }
+    console.log(userCredential);
+  }
+  return (
         <div>
              <div id = "login">
           <div className = "container">
             <div className = "row login-box">
              <BaseLogin/>
-             <LoginForm/>
+             <LoginForm loginState={{handleSubmit, setEmail, setPassword}}/>
              
             </div>
           </div>
