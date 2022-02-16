@@ -2,7 +2,7 @@ import * as actionType from './types';
 
 const initialState = {isLoggedln :false,user : null}
 //reducer
-export default function rootReducer(state,action){
+export default function rootReducer(state = initialState,action){
     const {type,payload}=action;
     switch(type){
         case actionType.REGISTER_SUCCESS:

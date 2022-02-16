@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+
 const connect = async() =>{
     try{
         //mongodb connection
@@ -9,7 +10,7 @@ const connect = async() =>{
             //useFindAndModify : false,
             //useCreatelndex : true
         });
-        console.log('MongoDB conneceted ${con.connection.host}');
+        console.log(`MongoDB conneceted ${con.connection.host}`);
     }catch(err){
         console.log(err)
         process.exit(1)

@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 //const User = require("./model/schema");
-const User = require("../../model/schema");
+const User = require("../model/schema");
 const jwt = require("jsonwebtoken");
 
 
@@ -40,7 +40,7 @@ exports.registerUser = async(req,res)=>{
           res.json(register)
       })
       .catch(error => {
-         res.status(406).json({err: error.message || "Something went wrong while registration"})
+        // res.status(406).json({error: error.message || "Something went wrong while registration"})
       })
 
 

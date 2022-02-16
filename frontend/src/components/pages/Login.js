@@ -3,8 +3,9 @@ import React,{useState} from 'react';
 import BaseLogin from '../imports/BaseLogin';
 import LoginForm from '../imports/LoginForm';
 import { useDispatch,useStore} from 'react-redux';
-
-import { registerAction } from '../../container/actions';
+import { useHistory } from 'react-router-dom';
+import { loginAction } from '../../container/actions';
+//import { error } from 'npmlog';
 
 // import BaseLogin from './components/imports/BaseLogin';
 // import LoginForm from './components/imports/LoginForm';
@@ -16,6 +17,7 @@ export default function Login() {
   
   const dispatch = useDispatch()
   const store = useStore()
+  const history = useHistory();
 
   //handle Submit handler function
   const handleSubmit = (event) =>{
@@ -25,9 +27,14 @@ export default function Login() {
       email,
       password
     }
-    console.log(dispatch(registerAction("Action Creator")))
+
+    const userdata = {email:email ,password:password}
+    const login = dispatch(loginAction(userdata))
+    login
+    .then(data=>history.push('/'))
+    .catch(error=>console.log(error))
     console.log(store.getState())
-    console.log(userCredential);
+    //console.log(userCredential);
   }
   return (
         <div>

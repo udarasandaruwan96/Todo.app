@@ -1,6 +1,7 @@
 const express =require('express')
 const connect = require('./database/connection')
-//const User = require("./model/schema");
+const User = require("./model/schema");
+const cors = require ('cors')
 
 require('dotenv').config({path: "./config.env"});
 const PORT = process.env.PORT || 8070;
@@ -8,6 +9,7 @@ const PORT = process.env.PORT || 8070;
 //create express instance
 const app =express();
 app.use(express.json());
+app.use(cors());
 
 //database connection
 connect()
